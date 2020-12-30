@@ -1,10 +1,17 @@
-window.deleteIt = function (e) {
+window.deleteIt = function (e) { // 删除一个子元素
     const resultEl = document.getElementById('result');
     const childrenList = resultEl.getElementsByTagName("tr");
-    console.log(resultEl.children);
-    console.log(resultEl.lastChild);
-    const target = "看电影";
-    console.log(childrenList);
+    const target = "睡觉"; // 要删除的子元素目标（用文字为标识）
+    for (let i = childrenList.length -1 ; i >= 0; i--) { // 删除与目标文字对应的子元素
+        console.log(childrenList[i].innerText)
+        if (childrenList[i].innerText.indexOf(target) !== -1) { // 即找到对应的目标元素就删除！
+            resultEl.removeChild(childrenList[i])
+        }
+    }
+    /*for (let i = childrenList.length -1 ; i >= 0; i--) { // 删除所有的子元素
+        console.log(i);
+        childrenList[i].parentNode.removeChild(childrenList[i])
+    }*/
 }
 
 window.addLine = function (e) { // 添加一行记录
