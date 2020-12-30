@@ -27,7 +27,7 @@ window.collect = async(btn) => { // 定义collect方法
 
 window.train = async () => { // 训练方法
     await transferRecognizer.train({
-        epochs: 30,
+        epochs: 100,
         callback: tfvis.show.fitCallbacks(
             {name: '训练效果'},
             ['loss', 'acc'],
